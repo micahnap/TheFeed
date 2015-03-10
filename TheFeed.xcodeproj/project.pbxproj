@@ -12,8 +12,8 @@
 		75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2161AAFB10C00131BBE /* ViewController.m */; };
 		75FFA21A1AAFB10C00131BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2181AAFB10C00131BBE /* Main.storyboard */; };
 		75FFA21C1AAFB10C00131BBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA21B1AAFB10C00131BBE /* Images.xcassets */; };
-		75FFA21F1AAFB10C00131BBE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA21D1AAFB10C00131BBE /* LaunchScreen.xib */; };
 		75FFA22B1AAFB10C00131BBE /* TheFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */; };
+		75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2341AAFB19300131BBE /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +36,10 @@
 		75FFA2161AAFB10C00131BBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		75FFA2191AAFB10C00131BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75FFA21B1AAFB10C00131BBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		75FFA21E1AAFB10C00131BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		75FFA2241AAFB10C00131BBE /* TheFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFA2291AAFB10C00131BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheFeedTests.m; sourceTree = "<group>"; };
+		75FFA2341AAFB19300131BBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 		75FFA2021AAFB10C00131BBE = {
 			isa = PBXGroup;
 			children = (
+				75FFA2341AAFB19300131BBE /* Default-568h@2x.png */,
 				75FFA20D1AAFB10C00131BBE /* TheFeed */,
 				75FFA2271AAFB10C00131BBE /* TheFeedTests */,
 				75FFA20C1AAFB10C00131BBE /* Products */,
@@ -87,7 +88,6 @@
 				75FFA2161AAFB10C00131BBE /* ViewController.m */,
 				75FFA2181AAFB10C00131BBE /* Main.storyboard */,
 				75FFA21B1AAFB10C00131BBE /* Images.xcassets */,
-				75FFA21D1AAFB10C00131BBE /* LaunchScreen.xib */,
 				75FFA20E1AAFB10C00131BBE /* Supporting Files */,
 			);
 			path = TheFeed;
@@ -200,8 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FFA21A1AAFB10C00131BBE /* Main.storyboard in Resources */,
-				75FFA21F1AAFB10C00131BBE /* LaunchScreen.xib in Resources */,
 				75FFA21C1AAFB10C00131BBE /* Images.xcassets in Resources */,
+				75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +250,6 @@
 				75FFA2191AAFB10C00131BBE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		75FFA21D1AAFB10C00131BBE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75FFA21E1AAFB10C00131BBE /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -343,7 +335,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = TheFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,7 +347,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = TheFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
