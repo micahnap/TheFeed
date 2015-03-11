@@ -12,5 +12,5 @@
 @interface Typedefs
 
 typedef void (^ImageCompletionBlock)(BOOL succeeded, UIImage *image);
-typedef void (^JSONCompletionBlock)(BOOL succeeded, NSData *data);
+
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75B829181AB0774E00F056CA /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B829171AB0774E00F056CA /* Article.m */; };
 		75FFA2111AAFB10C00131BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2101AAFB10C00131BBE /* main.m */; };
 		75FFA2141AAFB10C00131BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2131AAFB10C00131BBE /* AppDelegate.m */; };
 		75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2161AAFB10C00131BBE /* ViewController.m */; };
@@ -15,9 +16,9 @@
 		75FFA22B1AAFB10C00131BBE /* TheFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */; };
 		75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2341AAFB19300131BBE /* Default-568h@2x.png */; };
 		75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */; };
-		75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23A1AAFC5D100131BBE /* HTTPClient.m */; };
+		75FFA23B1AAFC5D100131BBE /* JSONWebParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */; };
 		75FFA2401AAFD12600131BBE /* JSONDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23F1AAFD12600131BBE /* JSONDataTest.m */; };
-		75FFA2421AAFD19F00131BBE /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2411AAFD19F00131BBE /* JSONData.json */; };
+		75FFA2421AAFD19F00131BBE /* TestJSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2411AAFD19F00131BBE /* TestJSONData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75B829161AB0774E00F056CA /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		75B829171AB0774E00F056CA /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		75FFA20B1AAFB10C00131BBE /* TheFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFA20F1AAFB10C00131BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFA2101AAFB10C00131BBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,11 +49,12 @@
 		75FFA2341AAFB19300131BBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AsyncImageDownload.h"; sourceTree = "<group>"; };
 		75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AsyncImageDownload.m"; sourceTree = "<group>"; };
-		75FFA2391AAFC5D100131BBE /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
-		75FFA23A1AAFC5D100131BBE /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		75FFA2391AAFC5D100131BBE /* JSONWebParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONWebParser.h; sourceTree = "<group>"; };
+		75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONWebParser.m; sourceTree = "<group>"; };
 		75FFA23C1AAFC7E600131BBE /* Typedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typedefs.h; sourceTree = "<group>"; };
 		75FFA23F1AAFD12600131BBE /* JSONDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONDataTest.m; path = ../JSONDataTest.m; sourceTree = "<group>"; };
-		75FFA2411AAFD19F00131BBE /* JSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = JSONData.json; path = ../JSONData.json; sourceTree = "<group>"; };
+		75FFA2411AAFD19F00131BBE /* TestJSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestJSONData.json; path = ../TestJSONData.json; sourceTree = "<group>"; };
+		F1A9DA1178BEFD31562D48D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,18 +75,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65E79837489378BA3DD08048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1A9DA1178BEFD31562D48D5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75FFA2021AAFB10C00131BBE = {
 			isa = PBXGroup;
 			children = (
+				75B829161AB0774E00F056CA /* Article.h */,
+				75B829171AB0774E00F056CA /* Article.m */,
 				75FFA23C1AAFC7E600131BBE /* Typedefs.h */,
-				75FFA2391AAFC5D100131BBE /* HTTPClient.h */,
-				75FFA23A1AAFC5D100131BBE /* HTTPClient.m */,
+				75FFA2391AAFC5D100131BBE /* JSONWebParser.h */,
+				75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */,
 				75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */,
 				75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */,
 				75FFA2341AAFB19300131BBE /* Default-568h@2x.png */,
 				75FFA20D1AAFB10C00131BBE /* TheFeed */,
 				75FFA2271AAFB10C00131BBE /* TheFeedTests */,
 				75FFA20C1AAFB10C00131BBE /* Products */,
+				65E79837489378BA3DD08048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,7 +136,7 @@
 		75FFA2271AAFB10C00131BBE /* TheFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				75FFA2411AAFD19F00131BBE /* JSONData.json */,
+				75FFA2411AAFD19F00131BBE /* TestJSONData.json */,
 				75FFA23F1AAFD12600131BBE /* JSONDataTest.m */,
 				75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */,
 				75FFA2281AAFB10C00131BBE /* Supporting Files */,
@@ -218,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FFA21A1AAFB10C00131BBE /* Main.storyboard in Resources */,
-				75FFA2421AAFD19F00131BBE /* JSONData.json in Resources */,
+				75FFA2421AAFD19F00131BBE /* TestJSONData.json in Resources */,
 				75FFA21C1AAFB10C00131BBE /* Images.xcassets in Resources */,
 				75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */,
 			);
@@ -240,8 +255,9 @@
 			files = (
 				75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */,
 				75FFA2141AAFB10C00131BBE /* AppDelegate.m in Sources */,
+				75B829181AB0774E00F056CA /* Article.m in Sources */,
 				75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */,
-				75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */,
+				75FFA23B1AAFC5D100131BBE /* JSONWebParser.m in Sources */,
 				75FFA2111AAFB10C00131BBE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -394,6 +411,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TheFeedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheFeed.app/TheFeed";
@@ -404,11 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TheFeedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheFeed.app/TheFeed";
@@ -434,6 +454,7 @@
 				75FFA2301AAFB10C00131BBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75FFA2311AAFB10C00131BBE /* Build configuration list for PBXNativeTarget "TheFeedTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +463,7 @@
 				75FFA2331AAFB10C00131BBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

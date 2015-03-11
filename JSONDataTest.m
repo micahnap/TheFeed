@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "HTTPClient.h"
+#import "JSONWebParser.h"
+#import "CJSONDeserializer.h"
 
 @interface JSONDataTest : XCTestCase
 
@@ -28,19 +29,42 @@
     [super tearDown];
 }
 
-- (void)testJSONData {
+- (void)testJSONDataParsing {
     
-    NSURL *dataServiceURL = [[NSBundle bundleForClass:self.class]
-                             URLForResource:@"JSONData" withExtension:@"json"];
+    NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *dataURL = [testBundle URLForResource:@"TestJSONData" withExtension:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfURL:dataURL];
     
-    // 4
-    NSData *sampleData = [NSData dataWithContentsOfURL:dataServiceURL];
-    NSError *error;
+    NSError *theError = nil;
     
-    id json = [NSJSONSerialization JSONObjectWithData:sampleData
-                                              options:kNilOptions
-                                                error:&error];
-    XCTAssertNotNil(json, @"invalid test data");
+    XCTAssertNotNil(theError, @"should not be nil");
+    
+//    XCTestExpectation *expectation = [self expectationWithDescription:@"Test success!"];
+//    [HTTPClient fetchJsonDataFromURL:FeedURL withCompletion:^(NSError *error, NSHTTPURLResponse *response, NSData *data){
+//        if(error)
+//        {
+//            NSLog(@"error is: %@", error);
+//        }else{
+//            NSInteger statusCode = [response statusCode];
+//            XCTAssertEqual(statusCode, 200);
+//            [expectation fulfill];
+//        }
+//    }];
+    
+//    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+//        
+//        if(error)
+//        {
+//            XCTFail(@"Expectation Failed with error: %@", error);
+//        }
+//        
+//    }];
+
+
+//    NSLog(@"feedString: %@, error: %@", dict, error);
+    
+    
+    
     
 }
 

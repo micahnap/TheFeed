@@ -7,21 +7,21 @@
 //
 
 #import "UIImageView+AsyncImageDownload.h"
-#import "HTTPClient.h"
+#import "JSONWebParser.h"
 
 @implementation UIImageView (AsyncImageDownload)
 
 
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(ImageCompletionBlock)completionBlock{
     
-    [HTTPClient fetchJsonDataFromURL:url withCompletion:^(BOOL succeeded, NSData *data){
-        if (succeeded){
-            UIImage *image = [[[UIImage alloc] initWithData:data] autorelease];
-            completionBlock(YES,image);
-        }else{
-            completionBlock(NO,nil);
-        }
-    }];
+//    [HTTPClient fetchJsonDataFromURL:url withCompletion:^(BOOL succeeded, NSData *data){
+//        if (succeeded){
+//            UIImage *image = [[[UIImage alloc] initWithData:data] autorelease];
+//            completionBlock(YES,image);
+//        }else{
+//            completionBlock(NO,nil);
+//        }
+//    }];
 }
 
 @end
