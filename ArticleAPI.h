@@ -15,6 +15,6 @@
 
 @interface ArticleAPI : NSObject
 
-+(void)getArrayOfArticlesWithCallBack:(void(^)(NSError*,NSArray*))completionBlock;
++(void)getArrayOfArticles;
 +(void)getImageFromURL:(NSString *)url withCallback:(void(^)(NSError*,UIImage*))completionBlock;
 @end

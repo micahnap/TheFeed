@@ -10,6 +10,6 @@
 
 @interface JSONParser : NSObject
 
-+(NSDictionary *)jsonDictionaryFromData:(NSData *)urlData;
++(NSDictionary *)jsonDictionaryFromString:(NSString *)jsonString;
 
 @end

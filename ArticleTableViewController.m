@@ -19,19 +19,10 @@ static NSString * const cellIdentifier = @"ArticleCell";
 @implementation ArticleTableViewController
 
 - (void)viewDidLoad {
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView:) name:@"reloadTableView" object:nil];
     [super viewDidLoad];
-    
-    [ArticleAPI getArrayOfArticlesWithCallBack:^(NSError *error, NSArray *array){
-        
-        if (!array){
-            NSLog(@"error: %@", error);
-        }else{
-            NSLog(@"array: %@", array);
-            _articles = array;
-            [self.tableView reloadData];
-        }
-    }];
+
+    [ArticleAPI getArrayOfArticles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,8 +36,15 @@ static NSString * const cellIdentifier = @"ArticleCell";
     [super dealloc];
 }
 
--(void)loadTableView{
-    
+
+-(void)reloadTableView:(id)notification{
+    _articles = [notification object];
+    //NSLog(@"article: %@", _articles);
+//    for (int i =0; i < [_articles count]; i++) {
+//        Article *article = _articles[i];
+//        NSLog(@"article: %@", article.titleArticle);
+//    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - TableView DataSource / Delegate
@@ -62,26 +60,25 @@ static NSString * const cellIdentifier = @"ArticleCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    Article *article = _articles[indexPath.row];
+    Article *article = _articles [indexPath.row];
+    //NSLog(@"article: %@", article.titleArticle);
+//    if (article.imageArticle) {
+//        cell.imageViewArticle.image = article.imageArticle;
+//    }else{
+//        
+//        __block UIImage *articleImage;
+//        
+//        [ArticleAPI getImageFromURL:article.imageURL withCallback:^(NSError *error, UIImage *image){
+//            articleImage = image;
+//        }];
+//        
+//        cell.imageViewArticle.image = articleImage;
+//        article.imageArticle = articleImage;
+//    }
     
-    if (article.imageArticle) {
-        cell.imageViewArticle.image = article.imageArticle;
-    }else{
-        
-        __block UIImage *articleImage;
-        
-        [ArticleAPI getImageFromURL:article.imageURL withCallback:^(NSError *error, UIImage *image){
-            articleImage = image;
-        }];
-        
-        cell.imageViewArticle.image = articleImage;
-        article.imageArticle = articleImage;
-    }
-    
-    cell.titleLabel.text = article.title;
-    cell.descriptionLable.text = article.articleDescription;
+    cell.titleLabel.text = article.titleArticle;
+    cell.descriptionLable.text = @"lol";
     return cell;
 }
 

@@ -10,20 +10,19 @@
 
 @implementation HTTPClient
 
-+(void)fetchDataFromURL:(NSString *)url withCompletion:(CompletionBlock)completionBlock{
++(void)fetchJSONDataFromURL:(NSString *)url withCompletion:(JSONCompletionBlock)completionBlock{
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-                               
-                               if (!data){
-                                   completionBlock(error,nil);
-                               }else{
-                                   completionBlock(nil,data);
-                               }
-                           }];
+    dispatch_async(queue, ^{
+        NSError *error = nil;
+        NSString *json = [[[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:url] encoding:NSASCIIStringEncoding error:&error] autorelease];
+        completionBlock(error,json);
+    });
+}
+
++(void)fetchImageDataFromURL:(NSString *)url withCompletion:(ImageCompletionBlock)completionBlock{
+    
 }
 
 @end

@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-typedef void (^CompletionBlock)(NSError *error, NSData *data);
+typedef void (^JSONCompletionBlock)(NSError *error, NSString *jsonString);
+typedef void (^ImageCompletionBlock)(NSError *error, UIImage *data);
 
 @interface HTTPClient : NSObject
 
-+(void)fetchDataFromURL:(NSString *)url withCompletion:(CompletionBlock)completionBlock;
++(void)fetchJSONDataFromURL:(NSString *)url withCompletion:(JSONCompletionBlock)completionBlock;
++(void)fetchImageDataFromURL:(NSString *)url withCompletion:(ImageCompletionBlock)completionBlock;
 @end

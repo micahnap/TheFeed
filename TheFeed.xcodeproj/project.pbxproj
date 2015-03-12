@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		75B829181AB0774E00F056CA /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B829171AB0774E00F056CA /* Article.m */; };
+		75B8291F1AB1E52700F056CA /* TestNoNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B8291E1AB1E52700F056CA /* TestNoNil.m */; };
+		75B829221AB1E52F00F056CA /* NSString+NoNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B829211AB1E52F00F056CA /* NSString+NoNil.m */; };
 		75FFA2111AAFB10C00131BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2101AAFB10C00131BBE /* main.m */; };
 		75FFA2141AAFB10C00131BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2131AAFB10C00131BBE /* AppDelegate.m */; };
 		75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2161AAFB10C00131BBE /* ViewController.m */; };
@@ -15,7 +17,6 @@
 		75FFA21C1AAFB10C00131BBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA21B1AAFB10C00131BBE /* Images.xcassets */; };
 		75FFA22B1AAFB10C00131BBE /* TheFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */; };
 		75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2341AAFB19300131BBE /* Default-568h@2x.png */; };
-		75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */; };
 		75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23A1AAFC5D100131BBE /* HTTPClient.m */; };
 		75FFA2401AAFD12600131BBE /* JSONDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23F1AAFD12600131BBE /* JSONDataTest.m */; };
 		75FFA2421AAFD19F00131BBE /* TestJSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2411AAFD19F00131BBE /* TestJSONData.json */; };
@@ -38,6 +39,9 @@
 /* Begin PBXFileReference section */
 		75B829161AB0774E00F056CA /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		75B829171AB0774E00F056CA /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		75B8291E1AB1E52700F056CA /* TestNoNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNoNil.m; sourceTree = "<group>"; };
+		75B829201AB1E52F00F056CA /* NSString+NoNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NoNil.h"; sourceTree = "<group>"; };
+		75B829211AB1E52F00F056CA /* NSString+NoNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NoNil.m"; sourceTree = "<group>"; };
 		75FFA20B1AAFB10C00131BBE /* TheFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFA20F1AAFB10C00131BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFA2101AAFB10C00131BBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,11 +55,8 @@
 		75FFA2291AAFB10C00131BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheFeedTests.m; sourceTree = "<group>"; };
 		75FFA2341AAFB19300131BBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AsyncImageDownload.h"; sourceTree = "<group>"; };
-		75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AsyncImageDownload.m"; sourceTree = "<group>"; };
 		75FFA2391AAFC5D100131BBE /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		75FFA23A1AAFC5D100131BBE /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
-		75FFA23C1AAFC7E600131BBE /* Typedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typedefs.h; sourceTree = "<group>"; };
 		75FFA23F1AAFD12600131BBE /* JSONDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONDataTest.m; path = ../JSONDataTest.m; sourceTree = "<group>"; };
 		75FFA2411AAFD19F00131BBE /* TestJSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestJSONData.json; path = ../TestJSONData.json; sourceTree = "<group>"; };
 		75FFA2441AB1111300131BBE /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
@@ -98,6 +99,8 @@
 		75FFA2021AAFB10C00131BBE = {
 			isa = PBXGroup;
 			children = (
+				75B829201AB1E52F00F056CA /* NSString+NoNil.h */,
+				75B829211AB1E52F00F056CA /* NSString+NoNil.m */,
 				75FFA2531AB161AB00131BBE /* ArticleTableViewController.h */,
 				75FFA2541AB161AB00131BBE /* ArticleTableViewController.m */,
 				75FFA24A1AB1365200131BBE /* ArticleCell.h */,
@@ -108,11 +111,8 @@
 				75FFA2451AB1111300131BBE /* JSONParser.m */,
 				75B829161AB0774E00F056CA /* Article.h */,
 				75B829171AB0774E00F056CA /* Article.m */,
-				75FFA23C1AAFC7E600131BBE /* Typedefs.h */,
 				75FFA2391AAFC5D100131BBE /* HTTPClient.h */,
 				75FFA23A1AAFC5D100131BBE /* HTTPClient.m */,
-				75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */,
-				75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */,
 				75FFA2341AAFB19300131BBE /* Default-568h@2x.png */,
 				75FFA20D1AAFB10C00131BBE /* TheFeed */,
 				75FFA2271AAFB10C00131BBE /* TheFeedTests */,
@@ -156,6 +156,7 @@
 		75FFA2271AAFB10C00131BBE /* TheFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				75B8291E1AB1E52700F056CA /* TestNoNil.m */,
 				75FFA2411AAFD19F00131BBE /* TestJSONData.json */,
 				75FFA23F1AAFD12600131BBE /* JSONDataTest.m */,
 				75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */,
@@ -278,7 +279,6 @@
 				75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */,
 				75FFA2141AAFB10C00131BBE /* AppDelegate.m in Sources */,
 				75B829181AB0774E00F056CA /* Article.m in Sources */,
-				75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */,
 				75FFA24C1AB1365200131BBE /* ArticleCell.m in Sources */,
 				75FFA2491AB1179100131BBE /* ArticleAPI.m in Sources */,
 				75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */,
@@ -292,6 +292,8 @@
 			files = (
 				75FFA22B1AAFB10C00131BBE /* TheFeedTests.m in Sources */,
 				75FFA2401AAFD12600131BBE /* JSONDataTest.m in Sources */,
+				75B829221AB1E52F00F056CA /* NSString+NoNil.m in Sources */,
+				75B8291F1AB1E52700F056CA /* TestNoNil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
