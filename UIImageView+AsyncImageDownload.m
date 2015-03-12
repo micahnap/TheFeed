@@ -7,7 +7,7 @@
 //
 
 #import "UIImageView+AsyncImageDownload.h"
-#import "JSONWebParser.h"
+#import "HTTPClient.h"
 
 @implementation UIImageView (AsyncImageDownload)
 

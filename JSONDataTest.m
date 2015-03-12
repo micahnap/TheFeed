@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "JSONWebParser.h"
-#import "CJSONDeserializer.h"
+#import "HTTPClient.h"
 
 @interface JSONDataTest : XCTestCase
 
@@ -62,10 +61,6 @@
 
 
 //    NSLog(@"feedString: %@, error: %@", dict, error);
-    
-    
-    
-    
 }
 
 //- (void)testPerformanceExample {

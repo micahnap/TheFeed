@@ -10,4 +10,18 @@
 
 @implementation Article
 
+
+-(id)initWithTitle:(NSString *)title description:(NSString *)description andImageURL:(NSString *)imageURL{
+    
+    self = [super init];
+    
+    if (self){
+        _title = title;
+        _articleDescription = description;
+        _imageURL = imageURL;
+    }
+    
+    return self;
+}
+
 @end

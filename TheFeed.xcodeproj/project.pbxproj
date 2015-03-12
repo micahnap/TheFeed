@@ -16,9 +16,13 @@
 		75FFA22B1AAFB10C00131BBE /* TheFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA22A1AAFB10C00131BBE /* TheFeedTests.m */; };
 		75FFA2351AAFB19300131BBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2341AAFB19300131BBE /* Default-568h@2x.png */; };
 		75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */; };
-		75FFA23B1AAFC5D100131BBE /* JSONWebParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */; };
+		75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23A1AAFC5D100131BBE /* HTTPClient.m */; };
 		75FFA2401AAFD12600131BBE /* JSONDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA23F1AAFD12600131BBE /* JSONDataTest.m */; };
 		75FFA2421AAFD19F00131BBE /* TestJSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FFA2411AAFD19F00131BBE /* TestJSONData.json */; };
+		75FFA2461AB1111300131BBE /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2451AB1111300131BBE /* JSONParser.m */; };
+		75FFA2491AB1179100131BBE /* ArticleAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2481AB1179100131BBE /* ArticleAPI.m */; };
+		75FFA24C1AB1365200131BBE /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA24B1AB1365200131BBE /* ArticleCell.m */; };
+		75FFA2551AB161AB00131BBE /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA2541AB161AB00131BBE /* ArticleTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +53,19 @@
 		75FFA2341AAFB19300131BBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AsyncImageDownload.h"; sourceTree = "<group>"; };
 		75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AsyncImageDownload.m"; sourceTree = "<group>"; };
-		75FFA2391AAFC5D100131BBE /* JSONWebParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONWebParser.h; sourceTree = "<group>"; };
-		75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONWebParser.m; sourceTree = "<group>"; };
+		75FFA2391AAFC5D100131BBE /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		75FFA23A1AAFC5D100131BBE /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		75FFA23C1AAFC7E600131BBE /* Typedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typedefs.h; sourceTree = "<group>"; };
 		75FFA23F1AAFD12600131BBE /* JSONDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONDataTest.m; path = ../JSONDataTest.m; sourceTree = "<group>"; };
 		75FFA2411AAFD19F00131BBE /* TestJSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestJSONData.json; path = ../TestJSONData.json; sourceTree = "<group>"; };
+		75FFA2441AB1111300131BBE /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		75FFA2451AB1111300131BBE /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		75FFA2471AB1179100131BBE /* ArticleAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAPI.h; sourceTree = "<group>"; };
+		75FFA2481AB1179100131BBE /* ArticleAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAPI.m; sourceTree = "<group>"; };
+		75FFA24A1AB1365200131BBE /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		75FFA24B1AB1365200131BBE /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		75FFA2531AB161AB00131BBE /* ArticleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewController.h; sourceTree = "<group>"; };
+		75FFA2541AB161AB00131BBE /* ArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewController.m; sourceTree = "<group>"; };
 		F1A9DA1178BEFD31562D48D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,11 +98,19 @@
 		75FFA2021AAFB10C00131BBE = {
 			isa = PBXGroup;
 			children = (
+				75FFA2531AB161AB00131BBE /* ArticleTableViewController.h */,
+				75FFA2541AB161AB00131BBE /* ArticleTableViewController.m */,
+				75FFA24A1AB1365200131BBE /* ArticleCell.h */,
+				75FFA24B1AB1365200131BBE /* ArticleCell.m */,
+				75FFA2471AB1179100131BBE /* ArticleAPI.h */,
+				75FFA2481AB1179100131BBE /* ArticleAPI.m */,
+				75FFA2441AB1111300131BBE /* JSONParser.h */,
+				75FFA2451AB1111300131BBE /* JSONParser.m */,
 				75B829161AB0774E00F056CA /* Article.h */,
 				75B829171AB0774E00F056CA /* Article.m */,
 				75FFA23C1AAFC7E600131BBE /* Typedefs.h */,
-				75FFA2391AAFC5D100131BBE /* JSONWebParser.h */,
-				75FFA23A1AAFC5D100131BBE /* JSONWebParser.m */,
+				75FFA2391AAFC5D100131BBE /* HTTPClient.h */,
+				75FFA23A1AAFC5D100131BBE /* HTTPClient.m */,
 				75FFA2361AAFC00300131BBE /* UIImageView+AsyncImageDownload.h */,
 				75FFA2371AAFC00300131BBE /* UIImageView+AsyncImageDownload.m */,
 				75FFA2341AAFB19300131BBE /* Default-568h@2x.png */,
@@ -253,11 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FFA2551AB161AB00131BBE /* ArticleTableViewController.m in Sources */,
+				75FFA2461AB1111300131BBE /* JSONParser.m in Sources */,
 				75FFA2171AAFB10C00131BBE /* ViewController.m in Sources */,
 				75FFA2141AAFB10C00131BBE /* AppDelegate.m in Sources */,
 				75B829181AB0774E00F056CA /* Article.m in Sources */,
 				75FFA2381AAFC00300131BBE /* UIImageView+AsyncImageDownload.m in Sources */,
-				75FFA23B1AAFC5D100131BBE /* JSONWebParser.m in Sources */,
+				75FFA24C1AB1365200131BBE /* ArticleCell.m in Sources */,
+				75FFA2491AB1179100131BBE /* ArticleAPI.m in Sources */,
+				75FFA23B1AAFC5D100131BBE /* HTTPClient.m in Sources */,
 				75FFA2111AAFB10C00131BBE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

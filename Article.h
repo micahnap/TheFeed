@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Article : NSObject
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *articleDescription;
+@property (nonatomic, strong) UIImage *imageArticle;
+
+-(id)initWithTitle:(NSString *)title description:(NSString *)description andImageURL:(NSString *)imageURL;
 @end

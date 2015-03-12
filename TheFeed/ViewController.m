@@ -7,21 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "JSONWebParser.h"
 
-@interface ViewController ()
+
+
+
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
