@@ -36,14 +36,8 @@ static NSString * const cellIdentifier = @"ArticleCell";
     [super dealloc];
 }
 
-
 -(void)reloadTableView:(id)notification{
     _articles = [notification object];
-    //NSLog(@"article: %@", _articles);
-//    for (int i =0; i < [_articles count]; i++) {
-//        Article *article = _articles[i];
-//        NSLog(@"article: %@", article.titleArticle);
-//    }
     [self.tableView reloadData];
 }
 
@@ -59,27 +53,56 @@ static NSString * const cellIdentifier = @"ArticleCell";
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    Article *article = _articles [indexPath.row];
-    //NSLog(@"article: %@", article.titleArticle);
-//    if (article.imageArticle) {
-//        cell.imageViewArticle.image = article.imageArticle;
-//    }else{
-//        
-//        __block UIImage *articleImage;
-//        
-//        [ArticleAPI getImageFromURL:article.imageURL withCallback:^(NSError *error, UIImage *image){
-//            articleImage = image;
-//        }];
-//        
-//        cell.imageViewArticle.image = articleImage;
-//        article.imageArticle = articleImage;
-//    }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self basicCellAtIndexPath:indexPath];
+}
+
+- (ArticleCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+    ArticleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    cell.titleLabel.text = article.titleArticle;
-    cell.descriptionLable.text = @"lol";
+    [self configureBasicCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)configureBasicCell:(ArticleCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Article *article = _articles[indexPath.row];
+    
+    [self setTitleForCell:cell item:article];
+    [self setSubtitleForCell:cell item:article];
+}
+
+- (void)setTitleForCell:(ArticleCell *)cell item:(Article *)article {
+    NSString *title = article.titleArticle;
+    [cell.titleLabel setText:title];
+}
+
+- (void)setSubtitleForCell:(ArticleCell *)cell item:(Article *)article {
+    NSString *subtitle = article.descriptionArticle;
+    
+    [cell.descriptionLable setText:subtitle];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForBasicCellAtIndexPath:indexPath];
+}
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    __block ArticleCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    });
+    
+    [self configureBasicCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
 @end

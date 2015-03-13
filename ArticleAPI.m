@@ -31,23 +31,20 @@
             [jsonArticles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
                 
                 NSDictionary *jsonDict = (NSDictionary *)obj;
-                NSString* title = [NSString noNilStringFromString:jsonDict[@"title"]];
-                NSString* description = [NSString noNilStringFromString:jsonDict[@"description"]];
-                NSString* imageHref = [NSString noNilStringFromString:jsonDict[@"imageHref"]];
-                NSLog(@"title: %@", jsonDict[@"title"]);
                 //objectify data to reflect data model
+
                 Article *article = [[[Article alloc] init]autorelease];
-                article.titleArticle = title;
-                article.descriptionArticle = description;
-                article.imageURL = imageHref;
+                article.titleArticle = [jsonDict[@"title"] isEqual:[NSNull null]] ? @"[No Title]" : jsonDict[@"title"];
+                article.descriptionArticle = [jsonDict[@"description"] isEqual:[NSNull null]] ? @"[No Description]" : jsonDict[@"description"];
+                article.imageURL = [jsonDict[@"imageHref"] isEqual:[NSNull null]] ? @"[No Image]" : jsonDict[@"imageHref"];;
                 [objectArticles addObject:article];
             }];
             
             jsonArticles = [objectArticles copy];
             
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:jsonArticles];
-//            });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:jsonArticles];
+            });
 
         }else{
             
