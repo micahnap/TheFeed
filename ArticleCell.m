@@ -16,12 +16,16 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)dealloc {
-    [_activityIndicator release];
+    self.titleLabel = nil;
+    self.descriptionLabel = nil;
     [super dealloc];
+}
+
+-(void)configureForArticle:(Article *)article{
+    self.titleLabel.text = article.titleArticle;
+    self.descriptionLabel.text = article.subtitleArticle;
 }
 @end

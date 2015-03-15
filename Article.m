@@ -10,4 +10,21 @@
 
 @implementation Article
 
+-(id)initWithTitle:(NSString *)titleArticle subtitle:(NSString *)descriptionArticle andImageURL:(NSString *)url{
+    self = [super init];
+    if (self) {
+        self.titleArticle = [titleArticle isEqual:[NSNull null]] ? @"[No Title]" : titleArticle;
+        self.subtitleArticle = [descriptionArticle isEqual:[NSNull null]] ? @"[No Description]" : descriptionArticle;
+        self.imageURLArticle = [url isEqual:[NSNull null]] ? @"" : url;
+    }
+    return self;
+}
+
+-(void)dealloc{
+    self.titleArticle = nil;
+    self.subtitleArticle = nil;
+    self.imageURLArticle = nil;
+    [super dealloc];
+}
+
 @end

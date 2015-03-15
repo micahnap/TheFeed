@@ -9,20 +9,34 @@
 #import "ArticleTableViewController.h"
 #import "ArticleAPI.h"
 #import "ArticleCell.h"
+#import "ArticleImageCell.h"
 #import "Article.h"
-static NSString * const cellIdentifier = @"ArticleCell";
+#import "TableViewDataSource.h"
+
+
+NSString * const kArticleCellIdentifier = @"ArticleCell";
+NSString * const kArticleImageCellIdentifier = @"ArticleImageCell";
+NSString * const kLoadingString = @"Loading...";
 
 @interface ArticleTableViewController ()
 @property (nonatomic, strong) NSArray *articles;
+@property (nonatomic, retain) TableViewDataSource *tvDataSource;
 @end
 
 @implementation ArticleTableViewController
+bool isRefreshing;
 
 - (void)viewDidLoad {
+    
+    //observer for ArticleAPI
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView:) name:@"reloadTableView" object:nil];
+    
+    UIRefreshControl *refreshControl = [[[UIRefreshControl alloc] init] autorelease];
+    refreshControl.attributedTitle = [[[NSAttributedString alloc] initWithString:kLoadingString] autorelease];
+    [refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [ArticleAPI fetchJSONDataAndNotifyWhenDone];
     [super viewDidLoad];
-
-    [ArticleAPI getArrayOfArticles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,78 +45,51 @@ static NSString * const cellIdentifier = @"ArticleCell";
 }
 
 -(void)dealloc{
-    
-    [_articles release];
+    self.articles = nil;
+    self.tvDataSource = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 
+-(void)pullToRefresh{
+    isRefreshing = true;
+    self.title = kLoadingString;
+    self.articles = nil;
+    self.tvDataSource = nil;
+    [ArticleAPI clearImageCache];
+    [ArticleAPI fetchJSONDataAndNotifyWhenDone];
+}
+
 -(void)reloadTableView:(id)notification{
-    _articles = [notification object];
-    [self.tableView reloadData];
-}
 
-#pragma mark - TableView DataSource / Delegate
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (isRefreshing) {
+        [self.refreshControl endRefreshing];
+        isRefreshing = false;
+    }
     
-    return [_articles count];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (notification){
+        NSDictionary *detailDictionary = [notification object];
+        self.articles = detailDictionary[@"articles"];
+        self.title = detailDictionary[@"headingTitle"];
+        
+        //pass cell setup block to data source for designing table view
+        void(^configureBasicCellBlock)(ArticleCell*, Article*) = ^void(ArticleCell *cell, Article *article){
+            [cell configureForArticle:article];
+        };
+        
+        void(^configureImageCellBlock)(ArticleImageCell*, Article*) = ^void(ArticleImageCell *cell, Article *article){
+            [cell configureForArticle:article];
+        };
+        
+        NSArray *cellConfigBlocks = [NSArray arrayWithObjects:configureBasicCellBlock,configureImageCellBlock ,nil];
+        NSArray *cellIdentifiers = [NSArray arrayWithObjects:kArticleCellIdentifier,kArticleImageCellIdentifier ,nil];
+        self.tvDataSource = [[[TableViewDataSource alloc] initWithItems:self.articles withCellIdentifiers:cellIdentifiers andConfigurationBlocks:cellConfigBlocks] autorelease];
+        self.tableView.dataSource = self.tvDataSource;
+        [self.tableView reloadData];
+    }else{
+        self.title = @"Error";
+    }
     
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self basicCellAtIndexPath:indexPath];
-}
-
-- (ArticleCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
-    ArticleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    [self configureBasicCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureBasicCell:(ArticleCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Article *article = _articles[indexPath.row];
-    
-    [self setTitleForCell:cell item:article];
-    [self setSubtitleForCell:cell item:article];
-}
-
-- (void)setTitleForCell:(ArticleCell *)cell item:(Article *)article {
-    NSString *title = article.titleArticle;
-    [cell.titleLabel setText:title];
-}
-
-- (void)setSubtitleForCell:(ArticleCell *)cell item:(Article *)article {
-    NSString *subtitle = article.descriptionArticle;
-    
-    [cell.descriptionLable setText:subtitle];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self heightForBasicCellAtIndexPath:indexPath];
-}
-
-- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
-    __block ArticleCell *sizingCell = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    });
-    
-    [self configureBasicCell:sizingCell atIndexPath:indexPath];
-    return [self calculateHeightForConfiguredSizingCell:sizingCell];
-}
-
-- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-    [sizingCell setNeedsLayout];
-    [sizingCell layoutIfNeeded];
-    
-    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
 @end

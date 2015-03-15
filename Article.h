@@ -12,8 +12,9 @@
 @interface Article : NSObject
 
 @property (nonatomic, strong) NSString *titleArticle;
-@property (nonatomic, strong) NSString *imageURL;
-@property (nonatomic, strong) NSString *descriptionArticle;
+@property (nonatomic, strong) NSString *imageURLArticle;
+@property (nonatomic, strong) NSString *subtitleArticle;
 @property (nonatomic, strong) UIImage *imageArticle;
 
+-(id)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle andImageURL:(NSString *)url;
 @end

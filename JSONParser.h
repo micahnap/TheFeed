@@ -11,5 +11,4 @@
 @interface JSONParser : NSObject
 
 +(NSDictionary *)jsonDictionaryFromString:(NSString *)jsonString;
-
 @end
